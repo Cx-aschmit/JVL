@@ -48,10 +48,6 @@ jobs:
           cx_client_id: ${{ secrets.CLIENT_ID }}
         # Secret key for AST portal authentication
           cx_client_secret: ${{ secrets.CLIENT_SECRET }}
-        # Select a Checkmarx Project Name
-          project_name: Cx-aschmit/JVL
-        # Branch name
-          branch: master
         # GitHub API Token
           github_token: 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
         # Additional parameters for AST scan
