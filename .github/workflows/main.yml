@@ -1,0 +1,57 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the master branch
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      # Runs a single command using the runners shell
+      - name: Run a one-line script
+        run: echo Hello, world!
+
+      # Runs a set of commands using the runners shell
+      - name: Run a multi-line script
+        run: |
+          echo Add other actions to build,
+          echo test, and deploy your project.
+
+      - name: Checkmarx AST Github Action
+      # You may pin to the exact commit or the version.
+      # uses: Checkmarx/ast-github-action@af050977dcd7da8d09798a3394bf17cc47660034
+        uses: Checkmarx/ast-github-action@v0.29
+        with:
+        # Provide the AST portal URL
+          base_uri: https://ast.checkmarx.net/
+        # Provide the Tenant for AST portal URL
+          cx_tenant: dp_wp_na
+        # Client ID for AST portal authentication
+          cx_client_id: 2211963d-0bb0-4b55-bd61-89e208f77f3a
+        # Secret key for AST portal authentication
+          cx_client_secret: eyJhbGciOiJIUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI3Y2Q4N2JmYi1hOGExLTQxNjgtYTQ4My02OTVkYjY5YmVkNDAifQ.eyJpYXQiOjE2MzkxNDkwODksImp0aSI6IjRkMGY1NTk5LWMyNmUtNDMzYy04MTljLWJmMTBhM2U4MDljNyIsImlzcyI6Imh0dHBzOi8vaWFtLmNoZWNrbWFyeC5uZXQvYXV0aC9yZWFsbXMvZHBfd3BfbmEiLCJhdWQiOiJodHRwczovL2lhbS5jaGVja21hcngubmV0L2F1dGgvcmVhbG1zL2RwX3dwX25hIiwic3ViIjoiOWJlOGZkZTUtZTNlYy00OWIyLTgzYjMtYjBkNTgxMTFmN2QyIiwidHlwIjoiT2ZmbGluZSIsImF6cCI6ImFzdC1hcHAiLCJzZXNzaW9uX3N0YXRlIjoiMjIxMTk2M2QtMGJiMC00YjU1LWJkNjEtODllMjA4Zjc3ZjNhIiwic2NvcGUiOiIgb2ZmbGluZV9hY2Nlc3MiLCJzaWQiOiIyMjExOTYzZC0wYmIwLTRiNTUtYmQ2MS04OWUyMDhmNzdmM2EifQ.OaXNHS7umSDieBlUgcJhIsn_sIuBRnStuup_0UvUkiM
+        # Select a Checkmarx Project Name
+          project_name: Cx-aschmit/JVL
+        # Branch name
+          branch: master
+        # GitHub API Token
+          github_token: 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
+        # Additional parameters for AST scan
