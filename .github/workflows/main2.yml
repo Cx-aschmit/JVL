@@ -12,7 +12,7 @@ jobs:
         with:
           base_uri: https://ast.checkmarx.net
           github_token: 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
-          cx_tenant: cx_se_andrew_schmit
+          cx_tenant: dp_wp_na
           cx_client_id: ${{ secrets.CLIENT_ID }}
           cx_client_secret: ${{ secrets.SECRET }}
           project_name: ${{ github.repository }}
