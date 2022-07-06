@@ -11,6 +11,7 @@ jobs:
         uses: Checkmarx/ast-github-action@main
         with:
           base_uri: https://ast.checkmarx.net
+          github_token: ${{ github.token }}
           cx_tenant: cx_se_andrew_schmit
           cx_client_id: ${{ secrets.CLIENT_ID }}
           cx_client_secret: ${{ secrets.CLIENT_SECRET }}
