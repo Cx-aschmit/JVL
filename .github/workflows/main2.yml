@@ -8,7 +8,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Checkmarx AST Github Action
-        uses: Checkmarx/ast-github-action@2.0.7
+        uses: Checkmarx/ast-github-action@main
         with:
     base_uri: https://ast.checkmarx.net
     cx_tenant: cx_se_andrew_schmit
