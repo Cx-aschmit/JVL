@@ -28,16 +28,16 @@ jobs:
       - name: Checkmarx AST Github Action
       # You may pin to the exact commit or the version.
       # uses: Checkmarx/ast-github-action@af050977dcd7da8d09798a3394bf17cc47660034
-        uses: Checkmarx/ast-github-action@v0.29
+        uses: Checkmarx/ast-github-action@main
         with:
         # Provide the AST portal URL
           base_uri: https://ast.checkmarx.net/
         # Provide the Tenant for AST portal URL
-          cx_tenant: dp_wp_na
+          cx_tenant: cx_se_andrew_schmit
         # Client ID for AST portal authentication
           cx_client_id: ${{ secrets.CLIENT_ID }}
         # Secret key for AST portal authentication
           cx_client_secret: ${{ secrets.CLIENT_SECRET }}
         # GitHub API Token
-          github_token: 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
+        #  github_token: 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
         # Additional parameters for AST scan
