@@ -16,6 +16,9 @@ jobs:
           cx_client_secret: ${{ secrets.SECRET }}
           project_name: ${{ github.repository }}
           #branch: ${{ github.head_ref }}
-          additional_params: --scan-types sca,kics --report-format sarif
-
-
+          additional_params: --scan-types sca,kics --file-filter !readme --report-format sarif --output-name results
+      - name: Upload SARIF file
+        uses: github/codeql-action/upload-sarif@v1
+        with:
+          # Path to SARIF file relative to the root of the repository
+          sarif_file: results.sarif
