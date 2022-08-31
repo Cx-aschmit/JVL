@@ -16,6 +16,6 @@ jobs:
           cx_client_secret: ${{ secrets.SECRET }}
           project_name: ${{ github.repository }}
           #branch: ${{ github.head_ref }}
-          additional_params: --scan-types sca,kics --report-format summaryJSON
+          additional_params: --scan-types sca,kics --report-format summaryConsole
 
 
