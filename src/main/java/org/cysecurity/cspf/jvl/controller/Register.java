@@ -41,7 +41,7 @@ public class Register extends HttpServlet {
             PrintWriter out = response.getWriter();
             Connection con=new DBConnect().connect(getServletContext().getRealPath("/WEB-INF/config.properties"));
         // String user=request.getParameter("username");
-          String pass=request.getParameter("password");
+         // String pass=request.getParameter("password");
           String email=request.getParameter("email");
           String about=request.getParameter("About");
           String secret=request.getParameter("secret");
