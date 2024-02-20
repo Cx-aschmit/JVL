@@ -1,4 +1,4 @@
-name: Checkmarx AST Github Actions
+name: Checkmarx AST Github Actionssss
 on: [push, pull_request]
 
 jobs:
